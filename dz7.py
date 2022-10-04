@@ -13,7 +13,7 @@
 '''
 # 1111111
 
-'''
+
 def binary_search(a, list):
     list.sort()
     print(list)
@@ -25,30 +25,30 @@ def binary_search(a, list):
 
     while True:
         if first == last:
-            if middle != a:
+            if a != middle:
                 print(f'Число {a} не найдено в данном списке')
                 break
 
-        elif middle == a:
+        elif a == middle:
             print(f"Число {a} найдено в списке под индексом {middle_index}")
             break
 
-        elif middle > a:
+        elif a < middle:
             high = middle_index - 1
             last = high
             middle_index = (first + last) // 2
             middle = list[middle_index]
-            if middle == a:
+            if a == middle:
                 print(f"Число {a} найдено в списке под индексом {middle_index}")
                 break
 
-        elif middle < a:
+        elif a > middle:
             low = middle_index + 1
             first = low
             last = length - 1
             middle_index = (first + last) // 2
             middle = list[middle_index]
-            if middle == a:
+            if a == middle:
                 print(f"Число {a} найдено в списке под индексом {middle_index}")
                 break
 
@@ -56,30 +56,28 @@ def binary_search(a, list):
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
+binary_search(2, list)
 
-binary_search(3, list)
 
-'''
 
 # 2222222222
 
-'''
-
-def bubble_sort(a):
-    size = len(a)
-    step = 0
-    index = size - 1
-    for i in range(index):
-        for b in range(0, index - i):
-            if a[b] > a[b + 1]:
-                step = a[b]
-                a[b] = a[b + 1]
-                a[b + 1] = step
-
-    print(a)
 
 
-list = [1, 7, 3, 4, 9, 8, 11, 10, 5, 2, 6]
-bubble_sort(list)
+# def bubble_sort(a):
+#     size = len(a)
+#     step = 0
+#     index = size - 1
+#     for i in range(index):
+#         for b in range(0, index - i):
+#             if a[b] > a[b + 1]:
+#                 step = a[b]
+#                 a[b] = a[b + 1]
+#                 a[b + 1] = step
 
-'''
+#     print(a)
+
+
+# list = [1, 7, 3, 4, 9, 8, 11, 10, 5, 2, 6]
+# bubble_sort(list)
+
